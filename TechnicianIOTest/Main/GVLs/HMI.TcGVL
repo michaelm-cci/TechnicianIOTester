@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="HMI" Id="{54f72343-44aa-44c1-804b-9a7386fc6125}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL 
+	
+	bDigitalOcmd				: ARRAY[1..iDoutputChannelCount]OF BOOL;
+
+END_VAR
+VAR_GLOBAL PERSISTENT
+	iEnabledChannels_DO,
+	iEnabledChannels_DI,
+	iEnabledChannels_AO,
+	iEnabledChannels_AI,
+	iEnabledChannels_TC			: INT;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

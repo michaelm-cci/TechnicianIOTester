@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="EngUnits_to_MeasureUnit" Id="{1bc54788-5d73-4be0-b261-d23d606f36ae}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION EngUnits_to_MeasureUnit : REAL
+VAR_INPUT
+	rValue		: REAL;
+	rSlope 		: REAL;
+	rOffset 	: REAL;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[MeasureUnit_to_EngUnits := (rValue*rSlope)+rOffset;]]></ST>
+    </Implementation>
+    <LineIds Name="EngUnits_to_MeasureUnit">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

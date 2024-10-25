@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="c_to_f" Id="{a4b81a62-9f9e-4bc0-b40c-689fff09d50f}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION c_to_f : REAL
+VAR_INPUT
+	tempC : REAL;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[c_to_f := (tempC*1.8) + 32;]]></ST>
+    </Implementation>
+    <LineIds Name="c_to_f">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

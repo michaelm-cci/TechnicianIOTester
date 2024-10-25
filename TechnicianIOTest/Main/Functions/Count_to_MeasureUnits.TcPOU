@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="Count_to_MeasureUnits" Id="{1e75b0e8-fced-4942-bada-b0161c2e5412}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION Count_to_MeasureUnits : REAL
+VAR_INPUT
+	iValue_in	: INT; 
+	iHigh		: REAL;
+	iLow		: REAL;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Count_to_MeasureUnits := ((iHigh - iLow) / 32767.0) * INT_TO_REAL(iValue_In) + iLow;]]></ST>
+    </Implementation>
+    <LineIds Name="Count_to_MeasureUnits">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

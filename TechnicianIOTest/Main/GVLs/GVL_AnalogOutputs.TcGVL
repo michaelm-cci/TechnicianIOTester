@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL_AnalogOutputs" Id="{563f42e0-5daa-4bb3-9ff0-cdc92f4f2c6f}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL CONSTANT
+	iAOChannelCount : INT := 50;
+	
+END_VAR
+VAR_GLOBAL
+	in_cmd								: ARRAY [1..iAOChannelCount] OF INT;
+	iAO							AT %Q*	: ARRAY [1..iAOChannelCount] OF INT;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

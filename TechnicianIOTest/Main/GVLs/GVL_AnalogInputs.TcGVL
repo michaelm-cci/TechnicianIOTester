@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL_AnalogInputs" Id="{dae6624e-82e7-4f32-ba67-401f784b230f}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL CONSTANT
+	iAIChannelCount : INT := 50;
+	
+END_VAR
+VAR_GLOBAL
+	iAinChannel						: ARRAY [1..iAIChannelCount] OF INT;
+END_VAR
+VAR_GLOBAL PERSISTENT
+	hmi_config 						: ARRAY [1..iAIChannelCount] OF AI_config ;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

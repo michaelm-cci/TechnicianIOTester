@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <DUT Name="AI_config" Id="{ecea32ad-d479-428b-82e3-a09a34e2b8d0}">
+    <Declaration><![CDATA[TYPE AI_config :
+STRUCT
+	//{attribute 'OPC.UA.DA' := '1'}
+	slope 				: REAL;
+	//{attribute 'OPC.UA.DA' := '1'}
+	offset 				: REAL;
+	iRawCount AT %I*	: INT;
+	rRawUnits			: REAL;
+	//{attribute 'OPC.UA.DA' := '1'}
+	rEngUnit 			: REAL;
+	bDataValid 			: BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL_DigitalIn" Id="{e4c0c4f7-a552-4453-af3e-5ce244f7ce72}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL CONSTANT
+	iDinChannelCount : INT := 50;
+END_VAR
+VAR_GLOBAL
+	bDigitalIn AT %I* : ARRAY [1..iDinChannelCount] OF BOOL;
+	iDinChannel	: ARRAY [1..iDinChannelCount] OF INT;
+	iEnabledChannels	: INT := 4;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

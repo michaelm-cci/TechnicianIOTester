@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_AnalogOut" Id="{215418ad-0c3e-493e-899d-29d3bcdbba17}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_AnalogOut
+VAR_INPUT 
+	iMaxInCH : INT;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	//AnalogIn	: ARRAY [1..GVL_AnalogInputs.iAIChannelCount] OF AI_config;
+	iIndex 		: INT;
+	iMax		: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF iMaxInCH > GVL_AnalogOutputs.iAOChannelCount THEN
+	iMax := GVL_AnalogOutputs.iAOChannelCount;
+ELSE
+	iMax := iMaxInCH;
+END_IF
+
+FOR iIndex :=1 TO iMax BY 1 DO
+	IF GVL_AnalogOutputs.in_cmd[iIndex] <= 4 or GVL_AnalogOutputs.in_cmd[iIndex]>20 THEN
+		GVL_AnalogOutputs.iAO[iIndex]	:= 0;
+	ELSE
+		GVL_AnalogOutputs.iAO[iIndex]	:=	MeasureUnits_to_Count(iValue_in	:=	GVL_AnalogOutputs.in_cmd[iIndex],	iHigh:= 20,	iLow:=4);
+	END_IF
+		
+END_FOR]]></ST>
+    </Implementation>
+    <LineIds Name="FB_AnalogOut">
+      <LineId Id="39" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="43" Count="1" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="89" Count="1" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="91" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

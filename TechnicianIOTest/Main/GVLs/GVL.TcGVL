@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{44469a28-03d3-42b1-b274-3d87aae2f87d}">
+    <Declaration><![CDATA[VAR_GLOBAL CONSTANT
+	MAX_CSV_ROWS 			: DINT := 1000000;
+	MAX_CSV_COLUMNS 		: INT := 100;
+	MAX_CSV_FIELD_LENGTH	: INT := 100;
+	cMaxCSVFieldValueSize : INT := 0;
+	//IMax_DigitalOut					: INT :=8;
+END_VAR
+]]></Declaration>
+  </GVL>
+</TcPlcObject>

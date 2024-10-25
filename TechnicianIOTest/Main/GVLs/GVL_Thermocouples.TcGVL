@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL_Thermocouples" Id="{64993fe0-6894-4e93-813a-f9bd4f4e9e67}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL CONSTANT
+	iTCchannelCount : INT := 20;
+END_VAR
+VAR_GLOBAL
+	hmi_config 						: ARRAY [1..iTCchannelCount] OF TC_config ;
+	iTCChannel						: ARRAY [1..20] OF INT;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

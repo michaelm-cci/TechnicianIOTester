@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_DigitalOut" Id="{aeb990d6-c87d-467f-9591-6e309ab29528}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_DigitalOut
+VAR_INPUT
+	iMaxInCH : INT;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+
+	arDigitalOut 	: ARRAY [1..GVL_DigitalOut.iDoutputChannelCount] OF ST_DigitalOut;
+	bLocalDO		: ARRAY [1..GVL_DigitalOut.iDoutputChannelCount] OF BOOL;
+	iIndex			: INT;
+	iSeqIndex		: INT;
+	iMax			: INT;
+	arrtrig_output	: ARRAY [1..GVL_DigitalOut.iDoutputChannelCount] OF R_TRIG;
+END_VAR
+VAR PERSISTENT
+	bSafetyDO		: ARRAY [1..GVL_DigitalOut.iDoutputChannelCount] OF BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[AssignDOs();
+]]></ST>
+    </Implementation>
+    <Method Name="AssignDOs" Id="{5275d904-7606-41ab-9d01-8b3b8085549f}">
+      <Declaration><![CDATA[METHOD AssignDOs : BOOL
+VAR_INPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[FOR iIndex:=1 TO iMaxInCH BY 1 DO
+	GVL_DigitalOut.bDigitalOutFdbk[iIndex] := OutputControl;
+END_FOR]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="AssignSafetyChannels" Id="{8b5a5991-c603-4533-89bc-314af3e63d29}">
+      <Declaration><![CDATA[METHOD AssignSafetyChannels : BOOL
+VAR_INPUT
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bSafetyDO[1]:=TRUE;
+bSafetyDO[2]:=TRUE;
+bSafetyDO[3]:=TRUE;
+bSafetyDO[4]:=TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="LimitMaxChannels" Id="{28f1912c-0e14-45c7-9ca2-113bf4b53eae}">
+      <Declaration><![CDATA[METHOD LimitMaxChannels : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[(*IF iMaxInCH > GVL_DigitalOut.iDoutputChannelCount THEN
+	iMax := GVL_DigitalOut.iDoutputChannelCount;
+ELSE
+	iMax := iMaxInCH;
+END_IF
+*)
+
+iMax := GVL_DigitalOut.iDoutputChannelCount;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="OutputControl" Id="{2be1f416-be15-4241-a2a6-41167da28aa1}">
+      <Declaration><![CDATA[PROPERTY OutputControl : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{d4917f0f-8b68-491a-980d-51d3df7226f8}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[OutputControl:=GVL_DigitalOut.bDigitalOut[iIndex];]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{2e276319-8f76-402f-bad0-1a4cf9260964}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[GVL_DigitalOut.bDigitalOut[iIndex] := OutputControl;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="FB_DigitalOut">
+      <LineId Id="280" Count="0" />
+      <LineId Id="279" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_DigitalOut.AssignDOs">
+      <LineId Id="5" Count="0" />
+      <LineId Id="9" Count="1" />
+    </LineIds>
+    <LineIds Name="FB_DigitalOut.AssignSafetyChannels">
+      <LineId Id="6" Count="2" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_DigitalOut.LimitMaxChannels">
+      <LineId Id="6" Count="3" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_DigitalOut.OutputControl.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_DigitalOut.OutputControl.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

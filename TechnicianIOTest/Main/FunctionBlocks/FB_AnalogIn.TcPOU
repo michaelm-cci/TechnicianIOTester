@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_AnalogIn" Id="{b9d98d80-fd6d-4389-9ffe-23aaf7609279}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_AnalogIn
+VAR_INPUT 
+	iMaxInCH : INT;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	//AnalogIn	: ARRAY [1..GVL_AnalogInputs.iAIChannelCount] OF AI_config;
+	iIndex 		: INT;
+	iMax		: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF iMaxInCH > GVL_AnalogInputs.iAIChannelCount THEN
+	iMax := GVL_AnalogInputs.iAIChannelCount;
+ELSE
+	iMax := iMaxInCH;
+END_IF
+
+FOR iIndex :=1 TO iMax BY 1 DO
+	(*IF GVL_AnalogInputs.iAinChannel[iIndex]>0 THEN*)
+	GVL_AnalogInputs.hmi_config[iIndex].rRawUnits:= Count_to_MeasureUnits
+		(
+		iValue_in	:=	GVL_AnalogInputs.hmi_config[iIndex].iRawCount,
+		iHigh		:=	20,
+		iLow		:= 	4
+		);
+		
+	GVL_AnalogInputs.hmi_config[iIndex].rEngUnit:= MeasureUnit_to_EngUnits
+		(	
+		rValue:= GVL_AnalogInputs.hmi_config[iIndex].rRawUnits,
+		rSlope:= GVL_AnalogInputs.hmi_config[iIndex].slope,
+		rOffset:=GVL_AnalogInputs.hmi_config[iIndex].offset
+		);
+		
+END_FOR]]></ST>
+    </Implementation>
+    <LineIds Name="FB_AnalogIn">
+      <LineId Id="39" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="43" Count="1" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="22" Count="3" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="17" Count="1" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="19" Count="2" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL_DigitalOut" Id="{14e45cec-eb20-4b33-bf1e-8d96187f281c}">
+    <Declaration><![CDATA[
+VAR_GLOBAL CONSTANT
+	iDoutputChannelCount : INT := 48;
+END_VAR
+VAR_GLOBAL
+	bDigitalOut AT %Q*	: ARRAY [1..iDoutputChannelCount] OF BOOL;
+	bDigitalOutFdbk : ARRAY [1..iDoutputChannelCount] OF BOOL;
+	iDoutChannel	: ARRAY [1..iDoutputChannelCount] OF INT;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
