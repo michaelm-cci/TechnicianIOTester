@@ -7,7 +7,8 @@ VAR_GLOBAL CONSTANT
 	
 END_VAR
 VAR_GLOBAL
-	in_cmd								: ARRAY [1..iAOChannelCount] OF INT;
+	in_cmd								: ARRAY [1..iAOChannelCount] OF REAL;
+	fdbk								: ARRAY [1..iAOChannelCount] OF REAL;
 	iAO							AT %Q*	: ARRAY [1..iAOChannelCount] OF INT;
 END_VAR]]></Declaration>
   </GVL>

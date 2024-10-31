@@ -3,7 +3,7 @@
   <POU Name="MeasureUnits_to_Count" Id="{b1349917-8af6-4438-86a4-6346e1c26277}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION MeasureUnits_to_Count : int;
 VAR_INPUT
-	iValue_in	: INT; 
+	iValue_in	: REAL; 
 	iHigh		: REAL;
 	iLow		: REAL;
 END_VAR
@@ -11,7 +11,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[MeasureUnits_to_Count	:=	TO_INT((INT_TO_REAL(iValue_In) - iLow)*(32767.0/(iHigh - iLow)));]]></ST>
+      <ST><![CDATA[MeasureUnits_to_Count	:=	TO_INT(((iValue_In) - iLow)*(32767.0/(iHigh - iLow)));]]></ST>
     </Implementation>
     <LineIds Name="MeasureUnits_to_Count">
       <LineId Id="26" Count="0" />
