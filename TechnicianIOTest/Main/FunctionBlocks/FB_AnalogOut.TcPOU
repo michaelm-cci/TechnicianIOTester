@@ -26,7 +26,7 @@ FOR iIndex :=1 TO iMax BY 1 DO
 		GVL_AnalogOutputs.iAO[iIndex]	:= 0;
 	ELSE
 		GVL_AnalogOutputs.iAO[iIndex]	:=	MeasureUnits_to_Count(iValue_in	:=	GVL_AnalogOutputs.in_cmd[iIndex],	iHigh:= 100,	iLow:=0);
-		GVL_AnalogOutputs.fdbk[iIndex]	:= GVL_AnalogOutputs.in_cmd[iIndex];
+		GVL_AnalogOutputs.fdbk[iIndex]	:=  Count_to_MeasureUnits(iValue_in :=  GVL_AnalogOutputs.ifdbk[iIndex],		iHigh:= 100,  	iLow:=0);
 	END_IF
 		
 END_FOR]]></ST>

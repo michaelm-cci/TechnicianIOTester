@@ -11,15 +11,6 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{B85BF20E-34A5-08AA-79F3-A336B605BFE1}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..48] OF BOOL</Name>
-			<BitSize>384</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-			<ArrayInfo>
-				<LBound>1</LBound>
-				<Elements>48</Elements>
-			</ArrayInfo>
-		</DataType>
-		<DataType>
 			<Name GUID="{3959AF2B-712F-4776-B31A-F615A7A6D72D}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..50] OF INT</Name>
 			<BitSize>800</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
@@ -29,7 +20,16 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
+			<Name GUID="{B85BF20E-34A5-08AA-79F3-A336B605BFE1}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..48] OF BOOL</Name>
+			<BitSize>384</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>48</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
 			<BitSize>7</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -47,7 +47,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
 			<BitSize>5</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -56,7 +56,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000009}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..8] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000009}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..8] OF BIT</Name>
 			<BitSize>9</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -85,7 +85,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{5654EA36-B9D2-4044-9CE5-0FCCA726E6CD}" Name="Main" PrjFilePath="Main\Main.plcproj" TmcFilePath="Main\Main.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Main\Main.tmc" TmcHash="{C343FAD2-D579-CF4F-5421-978CED46300E}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Main\Main.tmc" TmcHash="{BB502313-5228-C835-B81B-5A99EB1733B1}">
 					<Name>Main Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -373,6 +373,10 @@
 						<Var>
 							<Name>GVL_Thermocouples.hmi_config[20].iRawCountIn</Name>
 							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_AnalogOutputs.ifdbk</Name>
+							<Type GUID="{3959AF2B-712F-4776-B31A-F615A7A6D72D}">ARRAY [1..50] OF INT</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -921,6 +925,7 @@ Bit1: Value smaller than Limit2]]></Comment>
 		<OwnerA Name="TIPC^Main^Main Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Box 3 (EP4314-1002)">
 				<Link VarA="PlcTask Inputs^GVL_AnalogInputs.hmi_config[1].iRawCount" VarB="AI Standard Channel 2^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_AnalogOutputs.ifdbk[1]" VarB="AI Standard Channel 1^Value"/>
 				<Link VarA="PlcTask Outputs^GVL_AnalogOutputs.iAO[1]" VarB="AO Standard Channel 1^Analog output"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Box 4 (EP3204-0002)">

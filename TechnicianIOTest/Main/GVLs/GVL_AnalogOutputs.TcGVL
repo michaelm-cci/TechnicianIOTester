@@ -10,6 +10,7 @@ VAR_GLOBAL
 	in_cmd								: ARRAY [1..iAOChannelCount] OF REAL;
 	fdbk								: ARRAY [1..iAOChannelCount] OF REAL;
 	iAO							AT %Q*	: ARRAY [1..iAOChannelCount] OF INT;
+	ifdbk							AT %I*	: ARRAY [1..iAOChannelCount] OF INT;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
