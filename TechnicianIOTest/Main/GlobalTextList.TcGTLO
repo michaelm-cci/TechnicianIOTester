@@ -36,6 +36,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"67"</v>
+              <v n="TextDefault">"AI2 (PT01)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"824"</v>
               <v n="TextDefault">"AI3"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -91,6 +96,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"868"</v>
+              <v n="TextDefault">"Channel 0/1"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"793"</v>
               <v n="TextDefault">"Channel 1"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -106,6 +116,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"108"</v>
+              <v n="TextDefault">"Channel 10 (XV05)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"758"</v>
               <v n="TextDefault">"Channel 10/12"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -116,6 +131,16 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"410"</v>
+              <v n="TextDefault">"Channel 12 (XV06)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"615"</v>
+              <v n="TextDefault">"Channel 13 (XV02)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"591"</v>
               <v n="TextDefault">"Channel 13 (XV06)"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -123,6 +148,11 @@
             <o>
               <v n="TextID">"268"</v>
               <v n="TextDefault">"Channel 14 (XV02)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"645"</v>
+              <v n="TextDefault">"Channel 14 (XV07)"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
@@ -138,6 +168,11 @@
             <o>
               <v n="TextID">"895"</v>
               <v n="TextDefault">"Channel 2 (XV04)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"483"</v>
+              <v n="TextDefault">"Channel 2/3"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
@@ -166,6 +201,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"237"</v>
+              <v n="TextDefault">"Channel 4/5"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"314"</v>
               <v n="TextDefault">"Channel 5"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -186,6 +226,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"80"</v>
+              <v n="TextDefault">"Channel 6/7"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"792"</v>
               <v n="TextDefault">"Channel 7"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -201,6 +246,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"918"</v>
+              <v n="TextDefault">"Channel 8 (XV04)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"53"</v>
               <v n="TextDefault">"Channel 9"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -213,6 +263,11 @@
             <o>
               <v n="TextID">"643"</v>
               <v n="TextDefault">"Channel 9/10"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"479"</v>
+              <v n="TextDefault">"Channel 9/11"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>

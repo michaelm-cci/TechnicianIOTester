@@ -15,19 +15,31 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbAI(iMaxInCH	:=	HMI.iEnabledChannels_AI);
+      <ST><![CDATA[(*
+fbAI(iMaxInCH	:=	HMI.iEnabledChannels_AI);
 fbAO(iMaxInCH	:=	HMI.iEnabledChannels_AO);
 fbDI(iMaxInCH	:=	HMI.iEnabledChannels_DI);
 fbDO(iMaxInCH	:=	HMI.iEnabledChannels_DO);
 fbTC(iMaxInCH	:=	HMI.iEnabledChannels_TC);
+*)
+
+fbAI(iMaxInCH	:=	6);
+fbAO(iMaxInCH	:=	3);
+fbDI(iMaxInCH	:=	30);
+fbDO(iMaxInCH	:=	15);
+fbTC(iMaxInCH	:=	12);
 ]]></ST>
     </Implementation>
     <LineIds Name="FB_IOManager">
+      <LineId Id="34" Count="0" />
       <LineId Id="9" Count="0" />
       <LineId Id="17" Count="0" />
       <LineId Id="19" Count="0" />
       <LineId Id="18" Count="0" />
       <LineId Id="20" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="37" Count="4" />
+      <LineId Id="36" Count="0" />
       <LineId Id="16" Count="0" />
     </LineIds>
   </POU>
