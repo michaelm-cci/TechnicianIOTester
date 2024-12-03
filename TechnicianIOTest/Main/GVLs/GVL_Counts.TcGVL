@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL_Counts" Id="{5886e86e-d81d-4cf1-9feb-0ae6078e53fc}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	iCounter AT %I* : array[1..4] of UDINT;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

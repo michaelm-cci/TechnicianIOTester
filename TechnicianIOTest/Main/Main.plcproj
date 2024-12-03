@@ -75,6 +75,10 @@
     <Compile Include="GVLs\GVL_AnalogOutputs.TcGVL">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GVLs\GVL_Counts.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="GVLs\GVL_DigitalIn.TcGVL">
       <SubType>Code</SubType>
     </Compile>
